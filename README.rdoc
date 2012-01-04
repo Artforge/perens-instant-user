@@ -8,7 +8,8 @@ application.
   we've done most of the *work* that it would otherwise take to install devise.
   The engine provides pre-configured routes and a User model.
 
-* Rails >= 3.1 and Ruby >= 1.9.3 are required. It's time to make the jump to
+* Rails >= 3.1, Devise >= 2.0.0.rc, and Ruby >= 1.9.3 are required.
+  It's time to make the jump to
   Ruby 1.9 if you haven't already done so, as Rails 4.0 will require Ruby
   1.9.3 or greater.
 
