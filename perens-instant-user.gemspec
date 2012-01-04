@@ -19,14 +19,13 @@ Gem::Specification.new do |s|
   s.files         = %w(
     app/models/perens/instant_user.rb
     app/models/perens/instant_user/user.rb
-    config/initializers/devise.rb
     config/routes.rb
     db/migrate/20120103011557_create_perens_instant_user_users.rb
     lib/perens/instant_user/engine.rb
     lib/perens-instant-user.rb
     lib/perens/instant_user/version.rb
   )
-  s.add_dependency 'devise' '>= 2.0.0rc'
+  s.add_dependency 'devise', '>= 2.0.0rc'
   s.add_dependency 'rails', '>= 3.2.rc1'
   s.add_dependency 'haml'
 

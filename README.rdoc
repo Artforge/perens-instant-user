@@ -1,0 +1,43 @@
+= Perens::InstantUser
+
+Perens::InstantUser is a Rails Engine that makes it as easy as possible to
+add user management: logins, authentication, sign-up, etc., to your Rails
+application.
+
+* All of the user management services are provided by the Devise gem, but
+  we've done most of the *work* that it would otherwise take to install devise.
+  The engine provides pre-configured routes and a User model.
+
+* Rails >= 3.1 and Ruby >= 1.9.3 are required. It's time to make the jump to
+  Ruby 1.9 if you haven't already done so, as Rails 4.0 will require Ruby
+  1.9.3 or greater.
+
+* This engine is in a *very* early state of development. 
+  There is no inline documentation in the code, and there are no tests!
+  But it works, and provides
+  a good example of how to use Devise in an engine.
+
+* My thanks to Devise author and Rails committer José Valim,
+  who upon my request added a set of features to Devise that made it possible
+  to use Devise from an engine.
+
+== Installation
+
+* Edit your Gemfile or gemspec to add a dependency on the perens-instant-user gem.
+* <tt>bundle update</tt>
+* <tt>rake perens_instant_user:install:migrations</tt>
+* <tt>rake migrate</tt>
+* Edit config/routes.rb, adding this line:
+    <tt>mount Perens::InstantUser::Engine => '/'</tt>
+* Copy http://github.com/plataformatec/devise/blob/master/lib/generators/templates/devise.rb into config/initializers/devise.rb and edit it.
+* Edit one of your environment files, like config/application.rb, to add the
+  URL info to be used in email messages to users from the user management
+  system. While testing, this might be:
+    <tt>config.action_mailer.default_url_options = { :host => 'localhost:3000' }</tt>
+  but it must be set to the correct external URL when your application is
+  running for
+  real users.
+ 
+== To Do
+* I'm planning to provide a web interface to set the configuration information,
+  removing the need to edit configuration and environment files.
