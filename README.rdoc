@@ -28,12 +28,12 @@ application.
 * <tt>rake perens_instant_user:install:migrations</tt>
 * <tt>rake migrate</tt>
 * Edit config/routes.rb, adding this line:
-    <tt>mount Perens::InstantUser::Engine => '/'</tt>
+    mount Perens::InstantUser::Engine => '/'
 * Copy http://github.com/plataformatec/devise/blob/master/lib/generators/templates/devise.rb into config/initializers/devise.rb and edit it.
 * Edit one of your environment files, like config/application.rb, to add the
   URL info to be used in email messages to users from the user management
   system. While testing, this might be:
-    <tt>config.action_mailer.default_url_options = { :host => 'localhost:3000' }</tt>
+    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   but it must be set to the correct external URL when your application is
   running for
   real users.
