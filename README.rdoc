@@ -56,4 +56,4 @@ same global namespace. Thus, all of my code will be in the
 Forks can just change "Perens" to something else and leave "InstantUser" the
 same. It turns out that users of this engine only have to type the longer name
 two times, so the tiny increase in user load seems to be a good trade for
-avoding name collisions.
+avoiding name collisions.
