@@ -30,7 +30,22 @@ application.
 * <tt>rake migrate</tt>
 * Edit <tt>config/routes.rb</tt>, adding this line:
     mount Perens::InstantUser::Engine => '/'
-* Copy http://github.com/plataformatec/devise/blob/master/lib/generators/templates/devise.rb into <tt>config/initializers/devise.rb</tt> and edit it.
+* Copy http://raw.github.com/plataformatec/devise/master/lib/generators/templates/devise.rb into <tt>config/initializers/devise.rb</tt> and edit it.
+  * Change <tt>config.mailer_sender</tt> to a valid address of yours.
+  * Change the ORM configuration line to
+      require 'devise/orm/active_record'
+    if you are using ActiveRecord as your ORM (Rails defaults to this)
+    or
+      require 'devise/orm/mongoid'
+    if you are using Mongoid.
+  * Set the value for "config.pepper" to a *unique* value for your program.
+    It *must* be unique, this value is used to chaff the encryption of
+    passwords by your application. Security will be compromised if it's not
+    unique or if it becomes *known to outsiders*.
+    Generate the value by running this program once.
+      require 'securerandom'
+      print %Q(config.pepper = "#{SecureRandom.hex(64)}"\n)
+
 * Edit one of your environment files, like <tt>config/application.rb</tt>, to add the
   URL info to be used in email messages to users from the user management
   system. While testing, this might be:
