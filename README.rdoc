@@ -37,6 +37,8 @@ application.
   but it must be set to the correct external URL when your application is
   running for
   real users.
+* Add <tt>user_authenticate!</tt> and other Devise helpers to your controllers
+  as appropriate. See the Devise README.rdoc[https://github.com/plataformatec/devise#readme] for information on the available features.
  
 == To Do
 * I'm planning to provide a web interface to set the configuration information,
