@@ -28,17 +28,17 @@ application.
 * <tt>bundle update</tt>
 * <tt>rake perens_instant_user:install:migrations</tt>
 * <tt>rake migrate</tt>
-* Edit config/routes.rb, adding this line:
+* Edit <tt>config/routes.rb</tt>, adding this line:
     mount Perens::InstantUser::Engine => '/'
-* Copy http://github.com/plataformatec/devise/blob/master/lib/generators/templates/devise.rb into config/initializers/devise.rb and edit it.
-* Edit one of your environment files, like config/application.rb, to add the
+* Copy http://github.com/plataformatec/devise/blob/master/lib/generators/templates/devise.rb into <tt>config/initializers/devise.rb</tt> and edit it.
+* Edit one of your environment files, like <tt>config/application.rb</tt>, to add the
   URL info to be used in email messages to users from the user management
   system. While testing, this might be:
     config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   but it must be set to the correct external URL when your application is
   running for
   real users.
-* Add <tt>user_authenticate!</tt> and other Devise helpers to your controllers
+* Add <tt>authenticate_user!</tt> and other Devise helpers to your controllers
   as appropriate. See the Devise README.rdoc[https://github.com/plataformatec/devise#readme] for information on the available features.
  
 == Bugs
@@ -46,10 +46,14 @@ application.
 
 == To Do
 * I'm planning to provide a web interface to set the configuration information,
-  removing the need to edit configuration and environment files.
+  removing the need to copy and edit the Devise configuration file and the
+  environment files.
 
 == Why <tt>Perens::InstantUser</tt> instead of <tt>InstantUser</tt>, and why <tt>perens-instant-user</tt> instead of <tt>instant-user</tt>?
 Ruby and Rails are large enough that we should not all be sharing the
 same global namespace. Thus, all of my code will be in the
 <tt>Perens</tt> module and my gem names will start with <tt>perens-</tt>.
-
+Forks can just change "Perens" to something else and leave "InstantUser" the
+same. It turns out that users of this engine only have to type the longer name
+two times, so the tiny increase in user load seems to be a good trade for
+avoding name collisions.
