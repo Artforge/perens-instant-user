@@ -15,7 +15,7 @@ application.
 
 * This engine is in a *very* early state of development. 
   There is no inline documentation in the code, and there are no tests!
-  But it works, and provides
+  But it works (at least for me), and provides
   a good example of how to use Devise in an engine.
 
 * My thanks to Devise author and Rails committer José Valim,
@@ -47,3 +47,9 @@ application.
 == To Do
 * I'm planning to provide a web interface to set the configuration information,
   removing the need to edit configuration and environment files.
+
+== Why Perens::InstantUser instead of InstantUser, and why perens-instant-user instead of instant-user?
+Ruby and Rails are large enough that we should not all be sharing the
+same global namespace. Thus, all of my code will be in the
+<tt>Perens</tt> module and my gem names will start with <tt>perens-</tt>.
+
