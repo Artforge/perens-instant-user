@@ -48,7 +48,7 @@ application.
 * I'm planning to provide a web interface to set the configuration information,
   removing the need to edit configuration and environment files.
 
-== Why Perens::InstantUser instead of InstantUser, and why perens-instant-user instead of instant-user?
+== Why <tt>Perens::InstantUser</tt> instead of <tt>InstantUser</tt>, and why <tt>perens-instant-user</tt> instead of <tt>instant-user</tt>?
 Ruby and Rails are large enough that we should not all be sharing the
 same global namespace. Thus, all of my code will be in the
 <tt>Perens</tt> module and my gem names will start with <tt>perens-</tt>.
